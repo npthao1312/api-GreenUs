@@ -5,8 +5,8 @@ winston.emitErrs = true;
 var logger = new winston.Logger({
     transports: [
         new winston.transports.Console({
-            level: 'debug',
-            handleExceptions: false,
+            level: config.get('logs.level'),
+            handleExceptions: config.get('logs.handleExceptions'),
             json: false,
             colorize: false,
             timestamp: function() {
